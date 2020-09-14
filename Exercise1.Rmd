@@ -1,0 +1,33 @@
+---
+title: "Week 1 Exercise (part b)"
+author: "Zhiwei,Dou"
+date: "9/14/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1. The following section genarte 100 values from a log-normal distribution where
+$\mu$ = 1, $\sigma$ = 0.25.
+
+```{r , echo = TRUE}
+set.seed(2020)
+sample <- rlnorm(n = 100, meanlog = 1, sdlog = 0.25)
+```
+
+2. The following two plots show the histogram of the distribution and the histogram of the distribution on the log scale. 
+
+```{r , echo=TRUE}
+par(mfrow = c(1,2))
+hist(sample, main = "Distribution of the sample")
+hist(log(sample), main = "Distribution of the sample on the log scale", cex.main = 0.8)
+```
+
+3. In the end, we can calculate using R:
+```{r}
+mean <- mean(sample)
+variance <- var(sample)
+```
+The mean of the samples is 2.90 and the variance is 0.68.
